@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnStartTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/init_test"
+        android:padding="10dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDensity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/screen_density"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/rowsCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/row_numbers"
+        android:inputType="numberSigned"
+        app:layout_constraintEnd_toEndOf="@+id/txtDensity"
+        app:layout_constraintStart_toStartOf="@+id/txtDensity"
+        app:layout_constraintTop_toBottomOf="@+id/txtDensity" />
+
+    <EditText
+        android:id="@+id/columsCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/columns_numbers"
+        android:inputType="numberSigned"
+        app:layout_constraintEnd_toEndOf="@+id/txtDensity"
+        app:layout_constraintStart_toStartOf="@+id/txtDensity"
+        app:layout_constraintTop_toBottomOf="@+id/rowsCount" />
+
+    <TextView
+        android:id="@+id/txtTimeout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:text="@string/time_out_test"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/columsCount" />
+
+    <EditText
+        android:id="@+id/timeOutCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/time_out_number"
+        android:inputType="numberSigned"
+        app:layout_constraintEnd_toEndOf="@+id/txtTimeout"
+        app:layout_constraintStart_toStartOf="@+id/txtTimeout"
+        app:layout_constraintTop_toBottomOf="@+id/txtTimeout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
