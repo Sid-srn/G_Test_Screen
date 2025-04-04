@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Screen Test</string>
+    <string name="init_test">Iniciar teste</string>
+    <string name="screen_density">- Densidade da tela [opcional (default 5x7)] -</string>
+    <string name="row_numbers">Numero de linhas</string>
+    <string name="columns_numbers">Numero de Colunas</string>
+    <string name="time_out_test">- Timeout do Teste [opcional (default 10s)] -</string>
+    <string name="time_out_number">Tempo de timeout (seg)</string>
+    <string name="success_test">Teste com Sucesso</string>
+    <string name="fail_test">Teste Falhou</string>
+    <string name="remaining_time">Tempo restante %1$s</string>
+</resources>

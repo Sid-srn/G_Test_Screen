@@ -12,6 +12,7 @@ import com.google.android.material.snackbar.Snackbar
 const val ROW_COUNT = "ROW_COUNT"
 const val COL_COUNT = "COL_COUNT"
 const val TIME_OUT_COUNT = "TIME_OUT_COUNT"
+const val LOG_KEY = "Test Screen Log"
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,9 +28,9 @@ class MainActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult()
         ) { result ->
             if (result.resultCode == RESULT_OK) {
-                showSnackBar("Teste Sucesso", true)
+                showSnackBar(getString(R.string.success_test), true)
             } else {
-                showSnackBar("Teste Falha", false)
+                showSnackBar(getString(R.string.fail_test), false)
             }
         }
         binding.btnStartTest.setOnClickListener {

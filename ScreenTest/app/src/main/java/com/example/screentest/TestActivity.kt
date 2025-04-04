@@ -3,6 +3,7 @@ package com.example.screentest
 import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.GridLayout
@@ -48,6 +49,9 @@ class TestActivity : AppCompatActivity() {
         binding.gridLayout.setOnTouchListener { _, motionEvent ->
             touchGridEvent(motionEvent)
         }
+
+        Log.d(LOG_KEY, "Init test columns: $cols rows: $rows - timeout: $timeOut")
+
         viewModel.startTest(timeOut)
     }
 
@@ -96,12 +100,14 @@ class TestActivity : AppCompatActivity() {
             viewModel.testState.collect { state ->
                 when (state) {
                     is TestState.Success -> {
+                        Log.d(LOG_KEY, "Success test! columns: $cols rows: $rows - timeout: $timeOut")
                         //Toast.makeText(this@TestActivity, "Teste passou!", Toast.LENGTH_SHORT).show()
                         setResult(RESULT_OK)
                         finish()
                     }
 
                     is TestState.Failure -> {
+                        Log.d(LOG_KEY, "Fail test! columns: $cols rows: $rows - timeout: $timeOut")
                         //Toast.makeText(this@TestActivity, "Teste falhou!", Toast.LENGTH_SHORT).show()
                         setResult(RESULT_CANCELED)
                         finish()
@@ -113,7 +119,7 @@ class TestActivity : AppCompatActivity() {
         }
         lifecycleScope.launch {
             viewModel.timeRemaining.collect { time ->
-                binding.txtTimeRemaning.text = "Tempo restante: ${time}s"
+                binding.txtTimeRemaning.text = getString(R.string.remaining_time, time)
             }
         }
     }
